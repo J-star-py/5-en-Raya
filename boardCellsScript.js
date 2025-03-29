@@ -26,7 +26,6 @@ function generateCells(size){
     cell.onclick = () => {cellClicked(i)};
     board.appendChild(cell);
   }
-  console.log( moveOrder, player, boardData)
 }
 
 function cellClicked(cellNumber) {
