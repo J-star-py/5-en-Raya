@@ -1,0 +1,104 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+#gameSection {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+
+  min-width: 100vw;
+  min-height: 100vh;
+  height: fit-content;
+  width: fit-content;
+  border: 1px solid red;
+  padding: 60px 20px 20px 20px;
+}
+
+#board {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(30, 1fr);
+  height: 550px;
+  aspect-ratio: 1/1;
+  padding: 15px;
+  margin: 0px 0px 0px 0px;
+  background-color: rgb(218, 218, 218);
+  border-radius: 8px;
+  box-shadow: 3px 3px 8px rgba(59, 59, 59, 0.8);
+}
+
+.cell {
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(218, 218, 218);
+  border-radius: 3px;
+  aspect-ratio: 1/1;
+
+  transition: filter 0.12s;
+}
+.cell:hover {
+  filter: brightness(0.93);
+}
+
+#sliderDiv {
+  border: 1px solid rgba(0, 0, 255, 0);
+  width: 100px;
+}
+
+#board-size-slider {
+  transform: rotate(-90deg);
+  position: relative;
+  top: 265px;
+  right: 230px;
+}
+
+#sliderTooltip {
+  font-family: sans-serif;
+  text-align: center;
+  background-color: rgb(146, 146, 146);
+  color: white;
+  padding: 6px;
+  border-radius: 3px;
+  width: fit-content;
+  position: relative;
+  right: 33px;
+  bottom: -490px;
+  font-weight: bold;
+}
+
+#buttonsSection {
+  border: 1px solid rgba(0, 0, 255, 0);
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button {
+  background-color: rgb(236, 236, 236);
+
+  box-shadow: 3px 3px 6px rgba(59, 59, 59, 0.8);
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  min-width: 60px;
+  padding: 12px 12px;
+  position: relative;
+  left: 20px;
+}
+.button:hover {
+  filter: brightness(0.9);
+}
+
+.button p {
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  margin: 0px;
+  color: rgb(20, 20, 20);
+  user-select: none;
+}

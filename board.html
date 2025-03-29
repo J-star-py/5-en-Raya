@@ -1,0 +1,47 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5 en Raya</title>
+
+    <link rel="stylesheet" href="boardStyle.css" />
+  </head>
+  <body>
+    <div id="gameSection">
+      <div id="sliderDiv">
+        <input
+          id="board-size-slider"
+          type="range"
+          min="10"
+          max="30"
+          value="10"
+        />
+        <p id="sliderTooltip">10 x 10</p>
+      </div>
+
+      <div id="board">
+        <script>
+          document.getElementById("board-size-slider").style.width = "550px";
+        </script>
+        <script src="boardCellsScript.js"></script>
+      </div>
+      <div id="buttonsSection">
+        <div
+          id="resetBoard"
+          class="button"
+          onclick="(() => {resetFunction()})()"
+        >
+          <p style="font-size: 16px">Reset</p>
+        </div>
+        <div id="goBack" class="button" onclick="(() => {goBack()})()">
+          <p>←</p>
+        </div>
+        <div id="goFoward" class="button" onclick="(() => {goFoward()})()">
+          <p>→</p>
+        </div>
+      </div>
+    </div>
+    <script src="gameLogic.js"></script>
+    <script src="winEvaluation.js"></script>
+  </body>
+</html>
