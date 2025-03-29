@@ -17,7 +17,6 @@ function playMove(cellNumber, action = "normalPlay") {
 }
 
 function resetFunction() {
-  console.log("reset");
   colorBack();
   boardData = [];
   moveOrder = [];
@@ -48,17 +47,13 @@ function goBack() {
 function goFoward() {
   
   if (nextMoves.length == 0) {return};
-  console.log("NEXT MOVE")
   playMove(nextMoves.pop(), "goFoward")
-  console.log(moveOrder, nextMoves)
 }
 
 function winDetected(winInfo) {
   let increment = {0:gridSize,1:(parseInt(gridSize)-1),2:-1,3:(-parseInt(gridSize)-1)}[winInfo[1]]
   for (let i = 0; i < 5; i++) {
-    console.log("cell".concat((winInfo[0]-(increment*i)).toString()))
     let cellToColor = document.getElementById("cell".concat((winInfo[0]-(increment*i)).toString()));
-    console.log(cellToColor)
     cellToColor.style.filter = "brightness(0.83)";
     cellToColor.style.borderColor = "rgb(126, 255, 180)";
     winCells.push(cellToColor);
