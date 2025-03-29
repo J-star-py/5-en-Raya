@@ -2,7 +2,6 @@ function winEval(cellPlayed) {
   let startingPoints = findPoints(cellPlayed)
   let sequence = [0,0]
   let pointer;
-  console.log(startingPoints)
   
   for (let i1 = 0; i1 < 4; i1++) {
     sequence = [0,0];
@@ -10,7 +9,6 @@ function winEval(cellPlayed) {
     
     let increment = {0:gridSize,1:(parseInt(gridSize)-1),2:-1,3:(-parseInt(gridSize)-1)}[i1];
     for (let i2 = 0; i2 < (startingPoints[i1]+startingPoints[i1+4]); i2++) {
-      console.log(sequence,pointer+(increment*(i2)))
       let cellMark = boardData[pointer+(increment*(i2))];
       if (cellMark == sequence[0]) {sequence[1] = sequence[1]+1}
       else {sequence = [cellMark,1]};
@@ -23,8 +21,7 @@ function winEval(cellPlayed) {
 
 function findPoints(cellPlayed) {
   let cellXPosition = cellPlayed%gridSize;
-  let cellYPosition = (cellPlayed/gridSize)|0
-  console.log("POSITION", cellXPosition,cellYPosition, gridSize)
+  let cellYPosition = (cellPlayed/gridSize)|0;
 
   let rightPoint = Math.min((cellXPosition + 4), (parseInt(gridSize)-1))
   let topPoint = Math.max((cellYPosition - 4), 0)
